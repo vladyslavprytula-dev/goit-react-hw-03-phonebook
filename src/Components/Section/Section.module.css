@@ -1,0 +1,18 @@
+.theme {
+  margin: auto;
+  margin: 0;
+  text-align: center;
+  color: rgba(54, 43, 30, 0.822);
+  margin-top: 10px;
+}
+
+.section {
+  background-image: url(https://hqstyles.com/uploads/posts/2012-02/1329779290-99277-vintage-paper-patterns-pw-5.jpg);
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  padding-bottom: 30px;
+}
