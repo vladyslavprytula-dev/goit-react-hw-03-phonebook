@@ -1,6 +1,17 @@
 .contacts__text {
   margin: 0;
 }
+.contacts__item {
+  display: flex;
+  font-weight: 600;
+  font-size: 18px;
+  color: #472f17;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.contacts__item:first-child {
+  margin-top: 20px;
+}
 .contacts__btn {
   display: block;
   height: 20px;

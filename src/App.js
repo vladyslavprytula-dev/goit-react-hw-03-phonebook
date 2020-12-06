@@ -11,45 +11,39 @@ class App extends Component {
     filter: "",
   };
   componentDidMount() {
-    const persistedContacts = localStorage.getItem('contacts');
+    const persistedContacts = localStorage.getItem("contacts");
     if (persistedContacts) {
       this.setState({
-        contacts: JSON.parse(persistedContacts)
-      })
+        contacts: JSON.parse(persistedContacts),
+      });
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.contacts !== this.state.tasks) {
-      localStorage.setItem('contacts',JSON.stringify(this.state.contacts))
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts));
     }
   }
   addContact = (name, phone) => {
     const { contacts } = this.state;
-    const Contact = {
+    const contact = {
       id: uuidv4(),
       name,
       phone,
     };
-    // contacts.some((contact) => contact.name === name)
-    //   ? alert(`${name} is already in contacts`)
-    //   : this.setState((prevState) => {
-    //       return {
-    //         contacts: [...prevState.contacts, Contact],
-    //       };
-    //     });
-    if (contacts.some((contact) => contact.name === name)){
-      alert(`${name} is already in contacts`)}
-       else {this.setState((prevState) => {
-              return {
-                contacts: [...prevState.contacts, Contact],
-              };
-            });
+    if (contacts.some((contact) => contact.name === name)) {
+      alert(`${name} is already in contacts`);
+    } else {
+      this.setState((prevState) => {
+        return {
+          contacts: [...prevState.contacts, contact],
+        };
+      });
     }
   };
-  deleteContact = (ContactId) => {
+  deleteContact = (contactId) => {
     this.setState((prevState) => ({
       contacts: prevState.contacts.filter(
-        (Contact) => Contact.id !== ContactId
+        (contact) => contact.id !== contactId
       ),
     }));
   };

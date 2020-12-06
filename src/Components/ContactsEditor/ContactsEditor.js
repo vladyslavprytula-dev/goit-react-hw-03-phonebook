@@ -5,10 +5,9 @@ class ContactsEditor extends Component {
     name: "",
     phone: "",
   };
-  handleChange = (property) => {
-    return (e) => {
-      this.setState({ [property]: e.target.value });
-    };
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
   };
   handleSubmit = (e) => {
     e.preventDefault();
@@ -22,15 +21,17 @@ class ContactsEditor extends Component {
       <form onSubmit={this.handleSubmit} className={styles.form__label}>
         <p className={styles.form__text}>Name</p>
         <input
+          name="name"
           value={this.state.name}
-          onChange={this.handleChange("name")}
+          onChange={this.handleChange}
           className={styles.form__input}
         />
         <p className={styles.form__text}>Phone</p>
         <input
+          name="phone"
           value={this.state.phone}
           pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
-          onChange={this.handleChange("phone")}
+          onChange={this.handleChange}
           className={styles.form__input}
         />
         <button type="submit" className={styles.form__btn}>
