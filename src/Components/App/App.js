@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import ContactsEditor from "./Components/ContactsEditor/ContactsEditor";
-import ContactsList from "./Components/ContactsList/ContactList";
-import Filter from "./Components/Filter/Filter";
 import { v4 as uuidv4 } from "uuid";
-import Section from "./Components/Section/Section";
-import styles from "./styles/main.module.css";
+import ContactsEditor from "../ContactsEditor/ContactsEditor";
+import ContactsList from "../ContactsList/ContactList";
+import Filter from "../Filter/Filter";
+import Section from "../Section/Section";
+import styles from "../../styles/main.module.css";
 class App extends Component {
   state = {
     contacts: [],

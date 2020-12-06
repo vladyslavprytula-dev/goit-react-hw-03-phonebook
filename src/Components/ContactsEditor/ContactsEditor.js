@@ -30,9 +30,10 @@ class ContactsEditor extends Component {
         <input
           name="phone"
           value={this.state.phone}
-          pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
+          pattern="0[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{3}"
           onChange={this.handleChange}
           className={styles.form__input}
+          placeholder="0YY-XX-XX-XXX"
         />
         <button type="submit" className={styles.form__btn}>
           Add contact
